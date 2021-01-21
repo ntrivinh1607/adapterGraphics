@@ -14,8 +14,10 @@ namespace _1712913
         {
             this.e = e;
         }
-        public abstract void drawStar(int x, int y, int z, int t);
+        public abstract void drawStar(int centerPointX, int centerPointY, int innerRadius, int outterRadius);
 
-        public abstract void drawHouse();
+        public abstract void drawHouse(int centerPointX, int centerPointY, int width, int height);
+
+        public abstract void dispose();
     }
 }

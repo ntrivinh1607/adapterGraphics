@@ -21,9 +21,11 @@ namespace _1712913
             G.DrawPolygon(pn, Star);
         }
 
-        public override void drawHouse()
+        public override void drawHouse(int centerPointX, int centerPointY, int width, int height)
         {
-
+            G.DrawRectangle(pn, centerPointX - width / 2, centerPointY - height / 2, width, height);
+            PointF[] Triangle = { new PointF(Convert.ToSingle(centerPointX - width / 1.2), centerPointY - height / 2), new PointF(Convert.ToSingle(centerPointX + width / 1.2), centerPointY - height / 2), new PointF(centerPointX, centerPointY - height) };
+            G.DrawPolygon(pn, Triangle);
         }
 
         private PointF[] Calculate5StarPoints(PointF Orig, float outerradius, float innerradius)
@@ -52,6 +54,9 @@ namespace _1712913
             pnts[8].X += pnts[8].X - pnts[2].X; pnts[8].Y = pnts[2].Y;  // mirror point
             pnts[9].X += pnts[9].X - pnts[1].X; pnts[9].Y = pnts[1].Y;  // mirror point
             return pnts;
+        }
+        public override void dispose()
+        {
         }
     }
 }

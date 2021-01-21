@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using System.Drawing;
 
 namespace _1712913
 {
@@ -23,13 +22,18 @@ namespace _1712913
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            myGraphic graphic = new GdiPlusGraphic(e);
-            Star star = new Star(50, 100, 50, 20);
-            star.draw(graphic);
+            House house = new House(100, 100, 100, 100);
+            Star star = new Star(200, 100, 50, 20);
+            //choose graphics
+            myGraphic gdiGraphic = new GdiPlusGraphic(e);
+            //myGraphic cairoGraphic = new CairoContext(e);
 
-            //myGraphic graphic1 = new CairoContext(e);
-            //House house = new House();
-            //house.draw(graphic1);
+            star.draw(gdiGraphic);
+            house.draw(gdiGraphic);
+
+            //house.draw(cairoGraphic);
+            //star.draw(cairoGraphic);
+            //cairoGraphic.dispose();
         }
     }
 }

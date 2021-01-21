@@ -61,7 +61,6 @@
     <Compile Include="GdiPlusGraphic.cs" />
     <Compile Include="House.cs" />
     <Compile Include="myGraphic.cs" />
-    <Compile Include="PaintEventHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shape.cs" />
